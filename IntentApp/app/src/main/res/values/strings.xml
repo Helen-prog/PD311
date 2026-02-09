@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IntentApp</string>
+    <string name="sample_text">Hello</string>
+    <string name="first_btn">Первая кнопка</string>
+    <string name="second_btn">Вторая кнопка</string>
+    <string name="calc">Калькулятор</string>
+    <string name="number_1">Число_1</string>
+    <string name="number_2">Число_2</string>
+    <string name="calculate_sum">Вычислить сумму</string>
+</resources>
