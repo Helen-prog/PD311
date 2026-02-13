@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <EditText
+        android:id="@+id/cost_of_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите стоимость"
+        android:inputType="number"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Как вам облуживание"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cost_of_service" />
+
+    <RadioGroup
+        android:id="@+id/tip_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/service_question">
+
+        <RadioButton
+            android:id="@+id/option_ten_percent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Отлично (10%)" />
+
+        <RadioButton
+            android:id="@+id/options_seven_percent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Хорошо (7%)" />
+
+        <RadioButton
+            android:id="@+id/options_five_percent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Так себе (5%)" />
+    </RadioGroup>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Округлить чаевые?"
+        android:layout_marginHorizontal="20dp"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tip_options" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="371dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="439dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
                 String getPlayerOneName = playerOne.getText().toString();
                 String getPlayerTwoName = playerTwo.getText().toString();
 
-                if(getPlayerOneName.isEmpty() || getPlayerTwoName.isEmpty()){
+                if (getPlayerOneName.isEmpty() || getPlayerTwoName.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter player name", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Intent intent = new Intent(MainActivity.this, PlayingField.class);
                     intent.putExtra("playerOne", getPlayerOneName);
                     intent.putExtra("playerTwo", getPlayerTwoName);

@@ -28,6 +28,8 @@ public class PlayingField extends AppCompatActivity {
 
     private ImageView image1, image2, image3, image4, image5, image6, image7, image8, image9;
 
+    private int currentScoreX = 0, currentScoreY = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,12 +154,21 @@ public class PlayingField extends AppCompatActivity {
         playerOneName = findViewById(R.id.playerOneName1);
         playerTwoName = findViewById(R.id.playerTwoName2);
 
+        TextView scorePlayerOne = findViewById(R.id.scoreX);
+        TextView scorePlayerTwo = findViewById(R.id.scoreY);
+
         if (activePlayer == 1) {
             imageView.setImageResource(R.drawable.ximage);
 
             if(checkResults()) {
                 ResultDialog resultDialog = new ResultDialog(PlayingField.this, playerOneName.getText().toString() + " is a Winner!", PlayingField.this);
                 resultDialog.setCancelable(false);
+                resultDialog.show();
+
+                currentScoreX++;
+                scorePlayerOne.setText(String.valueOf(currentScoreX));
+            } else if (totalSelectBoxes == 9) {
+                ResultDialog resultDialog = new ResultDialog(PlayingField.this, "Math Draw", PlayingField.this);
                 resultDialog.show();
             } else{
                 changePlayerTurn(2);
@@ -166,8 +177,19 @@ public class PlayingField extends AppCompatActivity {
         } else {
             imageView.setImageResource(R.drawable.oimage);
 
-            changePlayerTurn(1);
-            totalSelectBoxes++;
+            if(checkResults()) {
+                ResultDialog resultDialog = new ResultDialog(PlayingField.this, playerTwoName.getText().toString() + " is a Winner!", PlayingField.this);
+                resultDialog.setCancelable(false);
+                resultDialog.show();
+                currentScoreY++;
+                scorePlayerTwo.setText(String.valueOf(currentScoreY));
+            } else if (totalSelectBoxes == 9) {
+                ResultDialog resultDialog = new ResultDialog(PlayingField.this, "Math Draw", PlayingField.this);
+                resultDialog.show();
+            } else {
+                changePlayerTurn(1);
+                totalSelectBoxes++;
+            }
         }
     }
 
