@@ -92,7 +92,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="2" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView3"
@@ -104,7 +104,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="3" />
+                                android:text="X" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -123,7 +123,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="4" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView5"
@@ -135,7 +135,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="5" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView6"
@@ -147,7 +147,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="6" />
+                                android:text="X" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -166,7 +166,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="7" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView8"
@@ -178,7 +178,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="8" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView9"
@@ -190,7 +190,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="9" />
+                                android:text="X" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -209,7 +209,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="10" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView11"
@@ -221,7 +221,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="11" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView12"
@@ -233,7 +233,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="12" />
+                                android:text="X" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -252,7 +252,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="13" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView14"
@@ -264,7 +264,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="14" />
+                                android:text="X" />
 
                             <TextView
                                 android:id="@+id/textView15"
@@ -276,7 +276,7 @@
                                 android:textColor="@color/white"
                                 android:gravity="center"
                                 android:textStyle="bold"
-                                android:text="15" />
+                                android:text="X" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
