@@ -1,17 +1,27 @@
 package com.example.menuapp;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.core.widget.TextViewKt;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class FirstPage extends Fragment {
@@ -19,9 +29,17 @@ public class FirstPage extends Fragment {
     RatingBar ratingBar;
     Button ratingButton;
 
+    SeekBar seekBar;
+    TextView textView;
+
+    SeekBar seekBarDiscrete;
+    TextView textSize;
+
     Spinner spinnerColors;
     Button buttonFindDescription;
     TextView textViewDescription;
+
+    FloatingActionButton fab;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,10 +67,113 @@ public class FirstPage extends Fragment {
                 int position = spinnerColors.getSelectedItemPosition();
                 String description = getDescriptionPosition(position);
                 textViewDescription.setText(description);
+
+                String colors = getColors(position);
+                buttonFindDescription.setBackgroundColor(Color.parseColor(colors));
+            }
+        });
+
+        seekBar = view.findViewById(R.id.seekBar);
+        textView = view.findViewById(R.id.textView);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textView.setText(progress + "/100");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                textView.setTextColor(Color.parseColor("#FF6100"));
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                textView.setTextColor(Color.parseColor("gray"));
+            }
+        });
+
+        seekBarDiscrete = view.findViewById(R.id.seekBar2);
+        textSize = view.findViewById(R.id.textSize);
+
+        seekBarDiscrete.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textSize.setTextSize(progress * 3);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        fab = view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomDialog();
             }
         });
 
         return view;
+    }
+
+    private void showBottomDialog() {
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.bottom_sheet_layout);
+
+        TextView second = dialog.findViewById(R.id.second);
+        TextView third = dialog.findViewById(R.id.third);
+        TextView fourth = dialog.findViewById(R.id.fourth);
+
+        second.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                replaceFragment(new SecondPage());
+            }
+        });
+
+        third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                replaceFragment(new ThirdFragment());
+            }
+        });
+
+        fourth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                replaceFragment(new FouthFragment());
+            }
+        });
+
+        dialog.show();
+
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
+    }
+
+    private String getColors(int position) {
+        String[] description = getResources().getStringArray(R.array.colors_button);
+        return description[position];
     }
 
     private String getDescriptionPosition(int position) {
