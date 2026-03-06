@@ -46,7 +46,37 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/before"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/outline_arrow_back_ios_new_24" />
+
+        <ImageSwitcher
+            android:id="@+id/imageSwitcher"
+            android:layout_width="250dp"
+            android:layout_height="350dp"
+            android:inAnimation="@android:anim/slide_in_left"
+            android:outAnimation="@android:anim/slide_out_right" />
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/outline_arrow_forward_ios_24" />
+    </LinearLayout>
 
 
 </LinearLayout>
